@@ -1,0 +1,267 @@
+  body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #f8f9fa;
+            z-index: 2; /* Ensure the navbar stays on top */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-top: 100px; /* Create space for the navbar */
+        }
+
+        /* Circle (card-body) styling */
+        .card-body {
+            background-color: blueviolet;
+            width: 30vw;
+            height: 30vw;
+            max-width: 300px;
+            max-height: 300px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            animation: bubble 3s infinite ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            color: white; /* Make text inside white */
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .card-body {
+                width: 50vw;
+                height: 50vw;
+                max-width: 200px;
+                max-height: 200px;
+                font-size: 1.5rem; /* Adjust font size for smaller screens */
+            }
+        }
+
+        /* Centered text inside the circle */
+        .circle-text {
+            position: absolute;
+            color: white;
+            text-align: center;
+        }
+
+        /* Keyframe animation for bubbling effect */
+        @keyframes bubble {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .img-container {
+            width: 250px; /* Set desired width for the container */
+            height: 250px; /* Set desired height for the container */
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        
+        .img-container img {
+            max-width: 100%; /* Ensure image scales with the container */
+            max-height: 100%; /* Ensure image height doesn't exceed the container */
+            object-fit: contain; /* Maintain aspect ratio inside the container */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #f8f9fa;
+            z-index: 2; /* Ensure the navbar stays on top */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-top: 100px; /* Create space for the navbar */
+        }
+
+        /* Circle (card-body) styling */
+        .card-body {
+            background-color: blueviolet;
+            width: 30vw;
+            height: 30vw;
+            max-width: 300px;
+            max-height: 300px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            animation: bubble 3s infinite ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            color: white; /* Make text inside white */
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .card-body {
+                width: 50vw;
+                height: 50vw;
+                max-width: 200px;
+                max-height: 200px;
+                font-size: 1.5rem; /* Adjust font size for smaller screens */
+            }
+        }
+
+        /* Centered text inside the circle */
+        .circle-text {
+            position: absolute;
+            color: white;
+            text-align: center;
+        }
+
+        /* Keyframe animation for bubbling effect */
+        @keyframes bubble {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .img-container {
+    width: 250px; /* Set desired width for the container */
+    height: 250px; /* Set desired height for the container */
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.img-container img {
+    max-width: 100%; /* Ensure image scales with the container */
+    max-height: 100%; /* Ensure image height doesn't exceed the container */
+    object-fit: contain; /* Maintain aspect ratio inside the container */
+}
+
+  .menu {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .menu li {
+    position: absolute;
+    left: 0;
+    list-style: none;
+    transform: rotate(0deg) translateX(100px);
+    transform-origin: 130px;
+    transition: 0.5s;
+    transition-delay: calc(0.1s * var(--i));
+  }
+  .menu.active li {
+    transform: rotate(calc(360deg / 8 * var(--i)));
+  }
+  .menu a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    text-decoration: none;
+    font-size: 22px;
+    border-radius: 50%;
+    transform: rotate(calc(360deg / -8 * var(--i)));
+    transition: 1s;
+    color: transparent;
+    transition-delay: 0.5s;
+    filter: drop-shadow(0 0 2px var(--clr));
+  }
+  .menu.active a {
+    color: var(--clr);
+  }
+  .menu a::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--clr);
+    transform: rotate(calc(90deg * var(--i))) translate(0, 25px);
+    transition: width 0.5s, height 0.5s, transform 0.5s;
+    transition-delay: 0.5s, 1s, 1.5s;
+  }
+  .menu.active a::before {
+    width: 50px;
+    height: 50px;
+    background: #161616;
+    border: 2px solid var(--clr);
+    transform: rotate(calc(0 * var(--i)));
+    transition: transform 0.5s, height 0.5s, width 0.5s;
+    transition-delay: 0.5s, 1.5s, 1.5s;
+    border-radius: 10px;
+    filter: drop-shadow(0 0 5px var(--clr));
+    rotate: 135deg;
+  }
+  .menu.active li:hover a::before {
+    background: var(--clr);
+  }
+  .menu.active li:hover a ion-icon {
+    color: #161616;
+  }
+  
+  .menuToggle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 32px;
+    transition: 1.5s;
+  }
+  .menu.active .menuToggle {
+    transform: rotate(315deg);
+  }
